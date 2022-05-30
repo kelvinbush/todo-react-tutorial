@@ -1,22 +1,20 @@
-import React, {useState} from 'react';
-import {FaTrash} from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaTrash } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import styles from './TodoItem.module.scss';
 
-const TodoItem = () => {
+const TodoItem = (props) => {
   const [editing, setEditing] = useState(false);
 
   const handleEditing = () => {
-    this.setState({
-      editing: true,
-    });
-  }
+    setEditing(true);
+  };
 
   const handleUpdatedDone = (event) => {
     if (event.key === 'Enter') {
-      this.setState({editing: false});
+      setEditing(false);
     }
-  }
+  };
 
   const completedStyle = {
     fontStyle: 'italic', color: '#595959', opacity: 0.4, textDecoration: 'line-through',
@@ -25,7 +23,6 @@ const TodoItem = () => {
   const viewMode = {};
   const editMode = {};
 
-  const {editing} = this.state;
   if (editing) {
     viewMode.display = 'none';
   } else {
@@ -33,8 +30,8 @@ const TodoItem = () => {
   }
   const {
     todo, handleChangeProps, deleteTodoProps, setUpdate,
-  } = this.props;
-  const {completed, id, title} = todo;
+  } = props;
+  const { completed, id, title } = todo;
 
   return (
     <li className={styles.item}>
@@ -46,11 +43,11 @@ const TodoItem = () => {
           onChange={() => handleChangeProps(id)}
         />
         <button type="button" onClick={() => deleteTodoProps(id)}>
-          <FaTrash style={{color: 'orangered', fontSize: '16px'}} />
+          <FaTrash style={{ color: 'orangered', fontSize: '16px' }} />
         </button>
         <span style={completed ? completedStyle : null}>
-            {title}
-          </span>
+          {title}
+        </span>
       </div>
       <input
         type="text"
@@ -64,15 +61,13 @@ const TodoItem = () => {
       />
     </li>
   );
-}
+};
 
 export default TodoItem;
 
 TodoItem.propTypes = {
   todo: PropTypes.shape({
-    completed: PropTypes.bool,
-    id: PropTypes.string,
-    title: PropTypes.string,
+    completed: PropTypes.bool, id: PropTypes.string, title: PropTypes.string,
   }).isRequired,
   handleChangeProps: PropTypes.func.isRequired,
   deleteTodoProps: PropTypes.func.isRequired,
