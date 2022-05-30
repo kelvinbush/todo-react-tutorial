@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/kelvinbush/todo-react-tutorial/static/css/main.1963ca4e.css",
+    "main.js": "/kelvinbush/todo-react-tutorial/static/js/main.c5e80da0.js",
+    "index.html": "/kelvinbush/todo-react-tutorial/index.html",
+    "main.1963ca4e.css.map": "/kelvinbush/todo-react-tutorial/static/css/main.1963ca4e.css.map",
+    "main.c5e80da0.js.map": "/kelvinbush/todo-react-tutorial/static/js/main.c5e80da0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1963ca4e.css",
+    "static/js/main.c5e80da0.js"
+  ]
+}
