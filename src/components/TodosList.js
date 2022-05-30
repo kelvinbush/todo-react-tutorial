@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import TodoItem from "./TodoItem";
 
-class TodosList extends React.Component {
+class TodosList extends Component {
   render() {
     return (
       <ul>
