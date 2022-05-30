@@ -1,6 +1,7 @@
-import React from "react"
+import React, {Component} from "react"
 import TodosList from "./TodosList";
-class TodoContainer extends React.Component {
+
+class TodoContainer extends Component {
 
   state = {
     todos: [
@@ -30,4 +31,5 @@ class TodoContainer extends React.Component {
     )
   }
 }
+
 export default TodoContainer
